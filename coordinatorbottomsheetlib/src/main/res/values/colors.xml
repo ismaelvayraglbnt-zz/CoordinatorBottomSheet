@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="transparent">#80000000</color>
+
+    <color name="app_background">#EEEEEE</color>
+    <color name="endo_background">#CBCBCB</color>
+    <color name="empty_module_background">#d7d7d7</color>
+    <color name="module_background">#FFFFFF</color>
+    <color name="module_blank_background">#F5F5F5</color>
+    <color name="module_background_developer_module">#E0F2F1</color>
+    <color name="issue_background">#FCE8B2</color>
+    <color name="text_description">#424242</color>
+    <color name="text_info">#80424242</color>     <!-- Applied 50% opacity -->
+    <color name="toolbar">#263238</color>
+    <color name="toolbar_text">#FFF</color>
+    <color name="status_bar">#E6000000</color>
+    <color name="indicator_selected">#26A69A</color>
+    <color name="indicator_unselected">#455A64</color>
+    <color name="teal_700">#00897b</color>
+    <color name="google_yellow_600">#f4b400</color>
+    <color name="module_ripple">#998e8e</color>
+    <color name="preview_highlighted">#F4F4F4</color>
+    <color name="preview_inactive">#A8ADAF</color>
+    <color name="preview_non_tappable">#5A6970</color>
+    <color name="background_preview">#7F878B</color>
+    <color name="module_status_ribbon_text_color">#FAFAFA</color>
+
+    <color name="settings_title">#26A69A</color>
+    <color name="settings_header">#212121</color>
+    <color name="settings_subheader">#9E9E9E</color>
+
+    <color name="progress_bar_background">#D8D8D8</color>
+    <color name="progress_bar_highlight">#009688</color>
+
+    <color name="switch_on">#009688</color>
+    <color name="google_yellow_50">#FEF6E0</color>
+    <color name="google_yellow_500">#FFC107</color>
+
+    <color name="detail_subheader">#757575</color>
+</resources>

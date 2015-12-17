@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BottomCollapsingToolbarLayout">
+        <attr name="state" format="enum">
+            <enum name="collapsed" value="0"/>
+            <enum name="attached" value="1"/>
+            <enum name="expanded" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="BottomCollapsibleActionBar">
+        <attr name="anchor_point" format="dimension"/>
+        <attr name="end_animation_point" format="dimension"/>
+    </declare-styleable>
+
+    <item type="id" name="fake_toolbar" />
+    <item type="id" name="toolbar_bottom_panel" />
+    <item type="id" name="layoutSpace" />
+</resources>

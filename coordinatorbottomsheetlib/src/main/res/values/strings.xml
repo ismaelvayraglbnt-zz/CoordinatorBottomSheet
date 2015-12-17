@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SlidingCoordinatorLayout</string>
+    <string name="action_settings">Settings</string>
+    <string name="custom_toolbar_behavior">glbnt.com.coordinatorbottomsheetlib.behaviors.ToolbarCustomBehavior</string>
+
+    <string name="layout_not_found_error">%1$s should have a %2$s as only child.</string>
+</resources>

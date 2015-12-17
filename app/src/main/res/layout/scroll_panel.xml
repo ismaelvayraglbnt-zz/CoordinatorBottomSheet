@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_marginTop="80dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+            android:background="@android:color/holo_green_dark"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:text="aga"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

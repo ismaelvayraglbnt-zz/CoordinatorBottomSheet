@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:visibility="visible"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/bottom_coord_layout"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    app:layout_behavior="coordinatorlayout.sliding.ismaelvayra.slidingcoordinatorlayout.behaviors.CoordinatorLayoutMasterBehavior"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <glbnt.com.coordinatorbottomsheetlib.views.BottomCollapsibleActionBar
+        android:id="@+id/app_bar_layout_bottom"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:maxHeight="100dp"
+        android:fitsSystemWindows="true"
+        app:anchor_point="200dp"
+        app:end_animation_point="300dp"
+        android:background="@android:color/transparent">
+
+        <glbnt.com.coordinatorbottomsheetlib.views.BottomCollapsingToolbarLayout
+            android:background="@android:color/transparent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:layout_height="wrap_content">
+
+        </glbnt.com.coordinatorbottomsheetlib.views.BottomCollapsingToolbarLayout>
+
+    </glbnt.com.coordinatorbottomsheetlib.views.BottomCollapsibleActionBar>
+    
+    <RelativeLayout
+        app:layout_behavior="@string/custom_toolbar_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/scroll_panel" android:id="@+id/scroll_goffre"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:elevation="10dp"
+                android:id="@id/fake_toolbar"
+                android:background="@color/teal_700"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@id/toolbar_bottom_panel"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:background="@color/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
