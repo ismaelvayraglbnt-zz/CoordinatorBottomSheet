@@ -13,7 +13,13 @@
         <attr name="end_animation_point" format="dimension"/>
     </declare-styleable>
 
+    <declare-styleable name="BottomToolbar">
+        <attr name="parallax_translation" format="dimension"/>
+        <attr name="final_height" format="dimension"/>
+    </declare-styleable>
+
     <item type="id" name="fake_toolbar" />
     <item type="id" name="toolbar_bottom_panel" />
     <item type="id" name="layoutSpace" />
+    <item type="id" name="toolbar_container"/>
 </resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@id/toolbar_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:background="@color/teal_700"
+        android:textColor="@android:color/white"
+        android:text="Es una goffredada"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <glbnt.com.coordinatorbottomsheetlib.views.BottomToolbar
+        android:layout_gravity="bottom"
+        android:id="@id/toolbar_bottom_panel"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+        android:background="@color/toolbar"
+        android:layout_width="match_parent"
+        app:parallax_translation="40dp"
+        app:final_height="112dp"
+        android:layout_height="80dp" />
+    <RelativeLayout
+        android:layout_gravity="bottom"
+        android:elevation="10dp"
+        android:id="@id/fake_toolbar"
+        android:background="@color/teal_700"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
+
+
+</FrameLayout>

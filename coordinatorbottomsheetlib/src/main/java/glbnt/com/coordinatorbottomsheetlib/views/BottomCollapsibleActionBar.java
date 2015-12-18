@@ -55,6 +55,7 @@ public class BottomCollapsibleActionBar extends AppBarLayout {
             TypedArray attributes = getContext().obtainStyledAttributes(attrs, R.styleable.BottomCollapsibleActionBar);
             anchorPoint = attributes.getDimension(R.styleable.BottomCollapsibleActionBar_anchor_point, screenHeight/2);
             endAnimationPoint = attributes.getDimension(R.styleable.BottomCollapsibleActionBar_end_animation_point, (screenHeight/2+screenHeight/4));
+            attributes.recycle();
         } else {
             anchorPoint = screenHeight/2;
             endAnimationPoint = screenHeight/2+screenHeight/4;
@@ -119,14 +120,6 @@ public class BottomCollapsibleActionBar extends AppBarLayout {
         }
 
         behavior = new AppBarLayoutSnapBehavior(anchorPoint, endAnimationPoint, screenHeight);
-
-
-        behavior.setDragCallback(new Behavior.DragCallback() {
-            @Override
-            public boolean canDrag(@NonNull AppBarLayout appBarLayout) {
-                return false;
-            }
-        });
 
         super.onAttachedToWindow();
     }
