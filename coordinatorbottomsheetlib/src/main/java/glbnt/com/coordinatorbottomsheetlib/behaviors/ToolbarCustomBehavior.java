@@ -55,14 +55,7 @@ public class ToolbarCustomBehavior extends AppBarLayout.ScrollingViewBehavior {
             initialHeightToolbar = ((FrameLayout.LayoutParams)toolbar.getLayoutParams()).height;
 
             LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)toolbarContainer.getLayoutParams();
-            if (parallaxTranslation!=0) {
-                params.height+=initialHeightToolbar+parallaxTranslation;
-            }
-
-            if (finalHeightToolbar!=0) {
-                params.height+=initialHeightToolbar+(finalHeightToolbar-initialHeightToolbar);
-            }
-
+            params.height=(int)initialHeightToolbar;
             toolbarContainer.setLayoutParams(params);
         }
 
@@ -76,36 +69,30 @@ public class ToolbarCustomBehavior extends AppBarLayout.ScrollingViewBehavior {
             View fakeToolbar = child.findViewById(R.id.fake_toolbar);
             fakeToolbar.setAlpha(BottomSheetUtils.getScaledAlpha(dependencyY, startPoint, endPoint));
             View bottomToolbar = child.findViewById(R.id.toolbar_bottom_panel);
+
             if (parallaxTranslation!=0) {
                 float toolbarTranslation = BottomSheetUtils.getParallaxPosition(dependencyY, startPoint, endPoint, parallaxTranslation, bottomToolbar.getTranslationY());
                 bottomToolbar.setTranslationY(toolbarTranslation);
                 fakeToolbar.setTranslationY(toolbarTranslation);
+
+                View toolbarContainer = child.findViewById(R.id.toolbar_container);
+                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)toolbarContainer.getLayoutParams();
+                params.height = (int)(initialHeightToolbar - toolbarTranslation);
+                toolbarContainer.setLayoutParams(params);
+
             }
 
-            if (finalHeightToolbar!=0) {
-                FrameLayout.LayoutParams bottomToolbarLp = (FrameLayout.LayoutParams) bottomToolbar.getLayoutParams();
-                FrameLayout.LayoutParams fakeToolbarLp = (FrameLayout.LayoutParams) fakeToolbar.getLayoutParams();
-                float toolbarHeightFloat = BottomSheetUtils.getScrollingHeight(dependencyY, startPoint, endPoint, finalHeightToolbar, initialHeightToolbar);
-                bottomToolbarLp.height = (int)toolbarHeightFloat;
-                fakeToolbarLp.height = (int)toolbarHeightFloat;
+//            if (finalHeightToolbar!=0) {
+//                FrameLayout.LayoutParams bottomToolbarLp = (FrameLayout.LayoutParams) bottomToolbar.getLayoutParams();
+//                FrameLayout.LayoutParams fakeToolbarLp = (FrameLayout.LayoutParams) fakeToolbar.getLayoutParams();
+//                float toolbarHeightFloat = BottomSheetUtils.getScrollingHeight(dependencyY, startPoint, endPoint, finalHeightToolbar, initialHeightToolbar);
+//                bottomToolbarLp.height = (int)(initialHeightToolbar+toolbarHeightFloat);
+//                fakeToolbarLp.height = (int)(initialHeightToolbar+toolbarHeightFloat);
+//
+//                bottomToolbar.setLayoutParams(bottomToolbarLp);
+//                fakeToolbar.setLayoutParams(fakeToolbarLp);
+//            }
 
-                bottomToolbar.setLayoutParams(bottomToolbarLp);
-                fakeToolbar.setLayoutParams(fakeToolbarLp);
-            }
-
-        }
-
-        if (dependency instanceof FrameLayout && dependency.getId() == R.id.toolbar_container) {
-            FrameLayout.LayoutParams params = (FrameLayout.LayoutParams)child.getLayoutParams();
-            if (parallaxTranslation!=0) {
-                params.height+=parallaxTranslation;
-            }
-
-            if (finalHeightToolbar!=0) {
-                params.height+=finalHeightToolbar-initialHeightToolbar;
-            }
-
-            child.setLayoutParams(params);
         }
 
         return super.onDependentViewChanged(parent, child, dependency);
