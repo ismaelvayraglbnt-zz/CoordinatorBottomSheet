@@ -49,7 +49,7 @@ public class BottomSheetUtils {
         if (position<startPoint) {
             actualHeight = naturalHeight;
         } else if (position >= startPoint && position <= endPoint) {
-            actualHeight = naturalHeight+ ((nextHeight-naturalHeight)/(endPoint-startPoint)) * position - 64f;
+            actualHeight = naturalHeight + ((nextHeight-naturalHeight)/(endPoint-startPoint)) * position - ((nextHeight-naturalHeight)/(endPoint-startPoint)) * startPoint;
         } else {
             actualHeight = nextHeight;
         }

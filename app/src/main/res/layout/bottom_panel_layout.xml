@@ -40,11 +40,8 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <include layout="@layout/frame_toolbar" />
             <include layout="@layout/scroll_panel" android:id="@+id/scroll_goffre"/>
-
-
         </LinearLayout>
 
 

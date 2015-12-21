@@ -82,25 +82,25 @@ public class ToolbarCustomBehavior extends AppBarLayout.ScrollingViewBehavior {
 
             }
 
-//            if (finalHeightToolbar!=0) {
-//                FrameLayout.LayoutParams bottomToolbarLp = (FrameLayout.LayoutParams) bottomToolbar.getLayoutParams();
-//                FrameLayout.LayoutParams fakeToolbarLp = (FrameLayout.LayoutParams) fakeToolbar.getLayoutParams();
-//                float toolbarHeightFloat = BottomSheetUtils.getScrollingHeight(dependencyY, startPoint, endPoint, finalHeightToolbar, initialHeightToolbar);
-//                bottomToolbarLp.height = (int)(initialHeightToolbar+toolbarHeightFloat);
-//                fakeToolbarLp.height = (int)(initialHeightToolbar+toolbarHeightFloat);
-//
-//                bottomToolbar.setLayoutParams(bottomToolbarLp);
-//                fakeToolbar.setLayoutParams(fakeToolbarLp);
-//            }
+            if (finalHeightToolbar!=0) {
+                FrameLayout.LayoutParams bottomToolbarLp = (FrameLayout.LayoutParams) bottomToolbar.getLayoutParams();
+                FrameLayout.LayoutParams fakeToolbarLp = (FrameLayout.LayoutParams) fakeToolbar.getLayoutParams();
+                float toolbarHeightFloat = BottomSheetUtils.getScrollingHeight(dependencyY, startPoint, endPoint, finalHeightToolbar, initialHeightToolbar);
+                bottomToolbarLp.height = (int)(toolbarHeightFloat);
+                fakeToolbarLp.height = (int)(toolbarHeightFloat);
+
+                bottomToolbar.setLayoutParams(bottomToolbarLp);
+                fakeToolbar.setLayoutParams(fakeToolbarLp);
+
+                View toolbarContainer = child.findViewById(R.id.toolbar_container);
+                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)toolbarContainer.getLayoutParams();
+                params.height += (toolbarHeightFloat - initialHeightToolbar);
+                toolbarContainer.setLayoutParams(params);
+            }
 
         }
 
         return super.onDependentViewChanged(parent, child, dependency);
-    }
-
-    @Override
-    public boolean onLayoutChild(CoordinatorLayout parent, View child, int layoutDirection) {
-        return super.onLayoutChild(parent, child, layoutDirection);
     }
 
     @Override
