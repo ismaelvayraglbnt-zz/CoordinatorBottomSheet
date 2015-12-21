@@ -22,7 +22,6 @@
         android:background="@color/toolbar"
         android:layout_width="match_parent"
         app:parallax_translation="40dp"
-        app:final_height="112dp"
         android:layout_height="80dp" />
     <RelativeLayout
         android:layout_gravity="bottom"

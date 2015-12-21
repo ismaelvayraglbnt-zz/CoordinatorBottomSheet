@@ -29,8 +29,8 @@ public class BottomSheetUtils {
         float parallaxY;
         if (position<startPoint) {
             parallaxY = 0;
-        } else if (position >= startPoint && position <= endPoint) {
-            parallaxY = -(translationToDo/(endPoint-startPoint)) * position + ((translationToDo/(endPoint-startPoint))*startPoint);
+            } else if (position >= startPoint && position <= endPoint) {
+                parallaxY = -(translationToDo/(endPoint-startPoint)) * position + ((translationToDo/(endPoint-startPoint))*startPoint);
         } else {
             parallaxY = actualTranslation;
         }
@@ -42,19 +42,19 @@ public class BottomSheetUtils {
             float position,
             float startPoint,
             float endPoint,
-            float translationToDo,
-            float actualTranslation) {
+            float nextHeight,
+            float naturalHeight) {
 
-        float parallaxY;
+        float actualHeight;
         if (position<startPoint) {
-            parallaxY = actualTranslation;
+            actualHeight = naturalHeight;
         } else if (position >= startPoint && position <= endPoint) {
-            parallaxY = -((translationToDo-actualTranslation)/(endPoint-startPoint)) * position + (((translationToDo-actualTranslation)/(endPoint-startPoint))*startPoint);
+            actualHeight = naturalHeight+ ((nextHeight-naturalHeight)/(endPoint-startPoint)) * position - 64f;
         } else {
-            parallaxY = translationToDo;
+            actualHeight = nextHeight;
         }
 
-        return parallaxY;
+        return actualHeight;
     }
 
 }
