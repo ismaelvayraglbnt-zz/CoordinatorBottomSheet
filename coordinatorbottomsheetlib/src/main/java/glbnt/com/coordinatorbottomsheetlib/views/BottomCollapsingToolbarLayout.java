@@ -39,7 +39,8 @@ public class BottomCollapsingToolbarLayout extends CollapsingToolbarLayout {
         height = getContext().getResources().getDisplayMetrics().heightPixels;
 
         LinearLayout layoutContainer = new LinearLayout(getContext());
-        layoutContainer.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        layoutContainer.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
         layoutContainer.setOrientation(LinearLayout.VERTICAL);
         layoutContainer.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 

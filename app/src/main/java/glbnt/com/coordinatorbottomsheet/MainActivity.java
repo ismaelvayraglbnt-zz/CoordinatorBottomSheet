@@ -6,9 +6,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     public void fabClick() {
         if (coord_bootom_panel_layout.getVisibility() == View.GONE) {
             setSupportActionBar(toolbar_bottom);
-            app_bar_layout_bottom.setState(BottomCollapsibleActionBar.appBarState.ANCHORED);
+            app_bar_layout_bottom.setState(BottomCollapsibleActionBar.AppBarState.ANCHORED);
         }
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (coord_bootom_panel_layout.getVisibility() == View.VISIBLE) {
             setSupportActionBar(toolbar);
-            app_bar_layout_bottom.setState(BottomCollapsibleActionBar.appBarState.ANCHORED);
+            app_bar_layout_bottom.setState(BottomCollapsibleActionBar.AppBarState.ANCHORED);
 //            new Handler().postDelayed(new Runnable() {
 //                @Override
 //                public void run() {

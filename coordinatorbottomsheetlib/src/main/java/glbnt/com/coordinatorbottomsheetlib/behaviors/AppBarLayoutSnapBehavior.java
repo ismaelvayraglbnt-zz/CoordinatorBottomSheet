@@ -13,7 +13,6 @@ import glbnt.com.coordinatorbottomsheetlib.views.BottomCollapsibleActionBar;
  * Created by ismaelvayra on 01/12/15.
  */
 public class AppBarLayoutSnapBehavior extends AppBarLayout.Behavior {
-
     private ValueAnimator mAnimator;
     private float anchoredPoint;
     private float endAnimationPoint;
@@ -45,7 +44,7 @@ public class AppBarLayoutSnapBehavior extends AppBarLayout.Behavior {
     }
 
     public boolean isScrolling() {
-        return mAnimator!=null && mAnimator.isRunning();
+        return mAnimator != null && mAnimator.isRunning();
     }
 
     @Override
@@ -54,31 +53,32 @@ public class AppBarLayoutSnapBehavior extends AppBarLayout.Behavior {
     }
 
     @Override
-    public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, AppBarLayout child, View directTargetChild, View target, int nestedScrollAxes) {
+    public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, AppBarLayout child,
+                                       View directTargetChild, View target, int nestedScrollAxes) {
         mNestedScrollStarted = super.onStartNestedScroll(coordinatorLayout, child, directTargetChild, target, nestedScrollAxes);
-        if(mNestedScrollStarted && mAnimator != null){
+        if (mNestedScrollStarted && mAnimator != null) {
             mAnimator.cancel();
         }
-        return  mNestedScrollStarted;
+        return mNestedScrollStarted;
     }
 
     @Override
     public void onStopNestedScroll(CoordinatorLayout coordinatorLayout, AppBarLayout child, View target) {
         super.onStopNestedScroll(coordinatorLayout, child, target);
         BottomCollapsibleActionBar appBar = (BottomCollapsibleActionBar) child;
-        if(!mNestedScrollStarted){
+        if (!mNestedScrollStarted) {
             return;
         }
 
         mNestedScrollStarted = false;
 
         int yPosition = Math.abs(this.getTopAndBottomOffset());
-        if (yPosition>anchoredPoint && yPosition< endAnimationPoint) {
-            appBar.setState(BottomCollapsibleActionBar.appBarState.ANCHORED);
-        } else if (yPosition> endAnimationPoint && yPosition!=screenHeight) {
-            appBar.setState(BottomCollapsibleActionBar.appBarState.EXPANDED);
-        } else if (yPosition<anchoredPoint && yPosition!=0) {
-            appBar.setState(BottomCollapsibleActionBar.appBarState.COLLAPSED);
+        if (yPosition > anchoredPoint && yPosition < endAnimationPoint) {
+            appBar.setState(BottomCollapsibleActionBar.AppBarState.ANCHORED);
+        } else if (yPosition > endAnimationPoint && yPosition != screenHeight) {
+            appBar.setState(BottomCollapsibleActionBar.AppBarState.EXPANDED);
+        } else if (yPosition < anchoredPoint && yPosition != 0) {
+            appBar.setState(BottomCollapsibleActionBar.AppBarState.COLLAPSED);
         }
     }
 
@@ -88,15 +88,17 @@ public class AppBarLayoutSnapBehavior extends AppBarLayout.Behavior {
     }
 
     @Override
-    public boolean onNestedFling(CoordinatorLayout coordinatorLayout, AppBarLayout child, View target, float velocityX, float velocityY, boolean consumed) {
+    public boolean onNestedFling(CoordinatorLayout coordinatorLayout, AppBarLayout child,
+                                 View target, float velocityX, float velocityY, boolean consumed) {
 
         return false;
     }
 
     @Override
-    public boolean onNestedPreFling(CoordinatorLayout coordinatorLayout, AppBarLayout child, View target, float velocityX, float velocityY) {
+    public boolean onNestedPreFling(CoordinatorLayout coordinatorLayout, AppBarLayout child,
+                                    View target, float velocityX, float velocityY) {
         BottomCollapsibleActionBar bottomCollapsibleActionBar = (BottomCollapsibleActionBar) child;
-        if (bottomCollapsibleActionBar.getState().equals(BottomCollapsibleActionBar.appBarState.EXPANDED)) {
+        if (bottomCollapsibleActionBar.getState().equals(BottomCollapsibleActionBar.AppBarState.EXPANDED)) {
             return false;
         }
         return true;

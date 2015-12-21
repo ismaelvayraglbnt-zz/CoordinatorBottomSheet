@@ -3,15 +3,19 @@ package glbnt.com.coordinatorbottomsheetlib.utils;
 /**
  * Created by ismaelvayra on 17/12/15.
  */
-public class BottomSheetUtils {
+public final class BottomSheetUtils {
+
+    private BottomSheetUtils() {
+        // Private constructor
+    }
 
     public static float getScaledAlpha(float position, float startPoint, float endPoint) {
 
         float alpha;
-        if (position<startPoint) {
+        if (position < startPoint) {
             alpha = 1;
         } else if (position >= startPoint && position <= endPoint) {
-            alpha = 1-(1/(endPoint-startPoint))*position +startPoint/(endPoint-startPoint);
+            alpha = 1 - (1 / (endPoint - startPoint)) * position + startPoint / (endPoint - startPoint);
         } else {
             alpha = 0;
         }
@@ -27,10 +31,11 @@ public class BottomSheetUtils {
             float actualTranslation) {
 
         float parallaxY;
-        if (position<startPoint) {
+        if (position < startPoint) {
             parallaxY = 0;
-            } else if (position >= startPoint && position <= endPoint) {
-                parallaxY = -(translationToDo/(endPoint-startPoint)) * position + ((translationToDo/(endPoint-startPoint))*startPoint);
+        } else if (position >= startPoint && position <= endPoint) {
+            parallaxY = -(translationToDo / (endPoint - startPoint)) * position
+                    + ((translationToDo / (endPoint - startPoint)) * startPoint);
         } else {
             parallaxY = actualTranslation;
         }
@@ -46,10 +51,11 @@ public class BottomSheetUtils {
             float naturalHeight) {
 
         float actualHeight;
-        if (position<startPoint) {
+        if (position < startPoint) {
             actualHeight = naturalHeight;
         } else if (position >= startPoint && position <= endPoint) {
-            actualHeight = naturalHeight + ((nextHeight-naturalHeight)/(endPoint-startPoint)) * position - ((nextHeight-naturalHeight)/(endPoint-startPoint)) * startPoint;
+            actualHeight = naturalHeight + ((nextHeight - naturalHeight) / (endPoint - startPoint))
+                    * position - ((nextHeight - naturalHeight) / (endPoint - startPoint)) * startPoint;
         } else {
             actualHeight = nextHeight;
         }

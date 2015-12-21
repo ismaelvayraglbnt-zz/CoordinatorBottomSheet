@@ -1,50 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
-    android:visibility="visible"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     android:id="@+id/bottom_coord_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    app:layout_behavior="coordinatorlayout.sliding.ismaelvayra.slidingcoordinatorlayout.behaviors.CoordinatorLayoutMasterBehavior"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:visibility="visible"
+    app:layout_behavior="coordinatorlayout.sliding.ismaelvayra.slidingcoordinatorlayout.behaviors.CoordinatorLayoutMasterBehavior">
 
     <glbnt.com.coordinatorbottomsheetlib.views.BottomCollapsibleActionBar
         android:id="@+id/app_bar_layout_bottom"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:maxHeight="100dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:fitsSystemWindows="true"
+        android:maxHeight="100dp"
         app:anchor_point="200dp"
-        app:end_animation_point="500dp"
-        android:background="@android:color/transparent">
+        app:end_animation_point="500dp">
 
         <glbnt.com.coordinatorbottomsheetlib.views.BottomCollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
-            android:layout_width="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            android:layout_height="wrap_content">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
         </glbnt.com.coordinatorbottomsheetlib.views.BottomCollapsingToolbarLayout>
 
     </glbnt.com.coordinatorbottomsheetlib.views.BottomCollapsibleActionBar>
-    
+
     <RelativeLayout
-        app:layout_behavior="@string/custom_toolbar_behavior"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/custom_toolbar_behavior">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <include layout="@layout/frame_toolbar" />
-            <include layout="@layout/scroll_panel" android:id="@+id/scroll_goffre"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/frame_toolbar"/>
+
+            <include
+                android:id="@+id/scroll_goffre"
+                layout="@layout/scroll_panel"/>
         </LinearLayout>
-
-
 
 
     </RelativeLayout>

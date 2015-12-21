@@ -1,8 +1,7 @@
-
 package glbnt.com.coordinatorbottomsheetlib.views;
+
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -28,14 +27,7 @@ public class BottomCollapsibleActionBar extends AppBarLayout {
     private CoordinatorLayout.LayoutParams params;
     private float anchorPoint;
     private float endAnimationPoint;
-
-    public enum appBarState {
-        COLLAPSED,
-        ANCHORED,
-        EXPANDED,
-    }
-
-    private appBarState state;
+    private AppBarState state;
 
     public BottomCollapsibleActionBar(Context context) {
         super(context);
@@ -51,14 +43,15 @@ public class BottomCollapsibleActionBar extends AppBarLayout {
 
         screenHeight = getResources().getDisplayMetrics().heightPixels;
 
-        if (attrs!=null) {
+        if (attrs != null) {
             TypedArray attributes = getContext().obtainStyledAttributes(attrs, R.styleable.BottomCollapsibleActionBar);
-            anchorPoint = attributes.getDimension(R.styleable.BottomCollapsibleActionBar_anchor_point, screenHeight/2);
-            endAnimationPoint = attributes.getDimension(R.styleable.BottomCollapsibleActionBar_end_animation_point, (screenHeight/2+screenHeight/4));
+            anchorPoint = attributes.getDimension(R.styleable.BottomCollapsibleActionBar_anchor_point, screenHeight / 2);
+            endAnimationPoint = attributes.getDimension(R.styleable.BottomCollapsibleActionBar_end_animation_point,
+                    (screenHeight / 2 + screenHeight / 4));
             attributes.recycle();
         } else {
-            anchorPoint = screenHeight/2;
-            endAnimationPoint = screenHeight/2+screenHeight/4;
+            anchorPoint = screenHeight / 2;
+            endAnimationPoint = screenHeight / 2 + screenHeight / 4;
         }
 
         this.addOnOffsetChangedListener(new OnOffsetChangedListener() {
@@ -67,16 +60,16 @@ public class BottomCollapsibleActionBar extends AppBarLayout {
 
                 BottomCollapsibleActionBar appBar = (BottomCollapsibleActionBar) appBarLayout;
                 if (appBarLister != null) {
-                    if (appBar.getBehavior().getAbsoluteOffset() == 0 && !getState().equals(appBarState.ANCHORED)) {
-                        state = appBarState.COLLAPSED;
+                    if (appBar.getBehavior().getAbsoluteOffset() == 0 && !getState().equals(AppBarState.ANCHORED)) {
+                        state = AppBarState.COLLAPSED;
                         coordParent.get().setVisibility(GONE);
                         appBarLister.onAppBarCollapsed();
                     } else if (appBar.getBehavior().getAbsoluteOffset() == (int) screenHeight) {
-                        state = appBarState.EXPANDED;
+                        state = AppBarState.EXPANDED;
                         appBarLister.onAppBarExpanded();
                     } else if (appBar.getBehavior().getAbsoluteOffset() == (int) anchorPoint) {
                         // TODO: fix this part, never enter here
-                        state = appBarState.ANCHORED;
+                        state = AppBarState.ANCHORED;
                         appBarLister.onAppBarAnchored();
                     }
                 }
@@ -84,11 +77,11 @@ public class BottomCollapsibleActionBar extends AppBarLayout {
         });
     }
 
-    public appBarState getState() {
+    public AppBarState getState() {
         return state;
     }
 
-    public void setState(appBarState state) {
+    public void setState(AppBarState state) {
         switch (state) {
             case ANCHORED:
                 coordParent.get().setVisibility(VISIBLE);
@@ -101,6 +94,8 @@ public class BottomCollapsibleActionBar extends AppBarLayout {
                 coordParent.get().setVisibility(VISIBLE);
                 setExpandedAppBar();
                 break;
+            default:
+                setCollapsedAppBar();
         }
 
         this.state = state;
@@ -109,12 +104,12 @@ public class BottomCollapsibleActionBar extends AppBarLayout {
     @Override
     protected void onAttachedToWindow() {
         coordParent = new WeakReference<>((CoordinatorLayout) getParent());
-        if (getChildCount()>0 && getChildAt(0) instanceof BottomCollapsingToolbarLayout) {
-            setCollapsibleSheet((BottomCollapsingToolbarLayout)getChildAt(0));
+        if (getChildCount() > 0 && getChildAt(0) instanceof BottomCollapsingToolbarLayout) {
+            setCollapsibleSheet((BottomCollapsingToolbarLayout) getChildAt(0));
             collapsibleSheet.setCollapseInterfaceListener(new CollapseInterfaceListener() {
                 @Override
                 public void onTouchOutside() {
-                    setState(appBarState.COLLAPSED);
+                    setState(AppBarState.COLLAPSED);
                 }
             });
         }
@@ -125,20 +120,20 @@ public class BottomCollapsibleActionBar extends AppBarLayout {
     }
 
     private void setAttachedAppBar() {
-        state = appBarState.ANCHORED;
+        state = AppBarState.ANCHORED;
         params = (CoordinatorLayout.LayoutParams) this.getLayoutParams();
-        behavior.animateOffsetTo(-(int)anchorPoint);
+        behavior.animateOffsetTo(-(int) anchorPoint);
         params.setBehavior(behavior);
         this.setLayoutParams(params);
     }
 
     private void setCollapsedAppBar() {
-        state = appBarState.COLLAPSED;
+        state = AppBarState.COLLAPSED;
         setExpanded(true, true);
     }
 
     private void setExpandedAppBar() {
-        state = appBarState.EXPANDED;
+        state = AppBarState.EXPANDED;
         setExpanded(false, true);
     }
 
@@ -166,12 +161,18 @@ public class BottomCollapsibleActionBar extends AppBarLayout {
         this.anchorPoint = anchorPoint;
     }
 
+    public float getEndAnimationPoint() {
+        return endAnimationPoint;
+    }
+
     public void setEndAnimationPoint(float endAnimationPoint) {
         this.endAnimationPoint = endAnimationPoint;
     }
 
-    public float getEndAnimationPoint() {
-        return endAnimationPoint;
+    public enum AppBarState {
+        COLLAPSED,
+        ANCHORED,
+        EXPANDED,
     }
 
     // TODO: fix on touch outside when drag
